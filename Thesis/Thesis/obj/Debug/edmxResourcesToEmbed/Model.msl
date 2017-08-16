@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ThesisDBModelStoreContainer" CdmEntityContainer="ThesisDBEntities">
+    <EntitySetMapping Name="AllowedUsers">
+      <EntityTypeMapping TypeName="ThesisDBModel.AllowedUser">
+        <MappingFragment StoreEntitySet="AllowedUsers">
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="faculty_id" ColumnName="faculty_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Announcements">
+      <EntityTypeMapping TypeName="ThesisDBModel.Announcement">
+        <MappingFragment StoreEntitySet="Announcements">
+          <ScalarProperty Name="modifiedBy" ColumnName="modifiedBy" />
+          <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="expiryDate" ColumnName="expiryDate" />
+          <ScalarProperty Name="announcementMsg" ColumnName="announcementMsg" />
+          <ScalarProperty Name="announcementID" ColumnName="announcementID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CancelledClassSchedules">
+      <EntityTypeMapping TypeName="ThesisDBModel.CancelledClassSchedule">
+        <MappingFragment StoreEntitySet="CancelledClassSchedule">
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="numHours" ColumnName="numHours" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="dateFiled" ColumnName="dateFiled" />
+          <ScalarProperty Name="room" ColumnName="room" />
+          <ScalarProperty Name="facultyName" ColumnName="facultyName" />
+          <ScalarProperty Name="section" ColumnName="section" />
+          <ScalarProperty Name="subjectCode" ColumnName="subjectCode" />
+          <ScalarProperty Name="cancelledDate" ColumnName="cancelledDate" />
+          <ScalarProperty Name="schedID" ColumnName="schedID" />
+          <ScalarProperty Name="cancelled_id" ColumnName="cancelled_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CurrentSettings">
+      <EntityTypeMapping TypeName="ThesisDBModel.CurrentSetting">
+        <MappingFragment StoreEntitySet="CurrentSettings">
+          <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+          <ScalarProperty Name="modifiedBy" ColumnName="modifiedBy" />
+          <ScalarProperty Name="durationEnd" ColumnName="durationEnd" />
+          <ScalarProperty Name="durationStart" ColumnName="durationStart" />
+          <ScalarProperty Name="schoolYearEnd" ColumnName="schoolYearEnd" />
+          <ScalarProperty Name="schoolYearStart" ColumnName="schoolYearStart" />
+          <ScalarProperty Name="semester" ColumnName="semester" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ForgotPasswordTickets">
+      <EntityTypeMapping TypeName="ThesisDBModel.ForgotPasswordTicket">
+        <MappingFragment StoreEntitySet="ForgotPasswordTickets">
+          <ScalarProperty Name="isUsed" ColumnName="isUsed" />
+          <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+          <ScalarProperty Name="code_hash" ColumnName="code_hash" />
+          <ScalarProperty Name="faculty_id" ColumnName="faculty_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="ThesisDBModel.Group">
+        <MappingFragment StoreEntitySet="Group">
+          <ScalarProperty Name="grpName" ColumnName="grpName" />
+          <ScalarProperty Name="grpID" ColumnName="grpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Holidays">
+      <EntityTypeMapping TypeName="ThesisDBModel.Holiday">
+        <MappingFragment StoreEntitySet="Holiday">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="holidayID" ColumnName="holidayID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MakeupClassSchedules">
+      <EntityTypeMapping TypeName="ThesisDBModel.MakeupClassSchedule">
+        <MappingFragment StoreEntitySet="MakeupClassSchedule">
+          <ScalarProperty Name="schoolYearEnd" ColumnName="schoolYearEnd" />
+          <ScalarProperty Name="schoolYearStart" ColumnName="schoolYearStart" />
+          <ScalarProperty Name="semester" ColumnName="semester" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="dateApproved" ColumnName="dateApproved" />
+          <ScalarProperty Name="approvedBy" ColumnName="approvedBy" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="numHours" ColumnName="numHours" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="room" ColumnName="room" />
+          <ScalarProperty Name="makeupDate" ColumnName="makeupDate" />
+          <ScalarProperty Name="dateFiled" ColumnName="dateFiled" />
+          <ScalarProperty Name="section" ColumnName="section" />
+          <ScalarProperty Name="facultyName" ColumnName="facultyName" />
+          <ScalarProperty Name="faculty_id" ColumnName="faculty_id" />
+          <ScalarProperty Name="subjectCode" ColumnName="subjectCode" />
+          <ScalarProperty Name="absentDate" ColumnName="absentDate" />
+          <ScalarProperty Name="makeupClassID" ColumnName="makeupClassID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messagings">
+      <EntityTypeMapping TypeName="ThesisDBModel.Messaging">
+        <MappingFragment StoreEntitySet="Messaging">
+          <ScalarProperty Name="isRead" ColumnName="isRead" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isInTrash" ColumnName="isInTrash" />
+          <ScalarProperty Name="isInArchive" ColumnName="isInArchive" />
+          <ScalarProperty Name="isInbox" ColumnName="isInbox" />
+          <ScalarProperty Name="author_sentdatetime" ColumnName="author_sentdatetime" />
+          <ScalarProperty Name="sent_datetime" ColumnName="sent_datetime" />
+          <ScalarProperty Name="sender_message" ColumnName="sender_message" />
+          <ScalarProperty Name="sender" ColumnName="sender" />
+          <ScalarProperty Name="sender_receiver_datetime" ColumnName="sender_receiver_datetime" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="receiver" ColumnName="receiver" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="msgID" ColumnName="msgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OpenTimes">
+      <EntityTypeMapping TypeName="ThesisDBModel.OpenTime">
+        <MappingFragment StoreEntitySet="OpenTime">
+          <ScalarProperty Name="timeValue" ColumnName="timeValue" />
+          <ScalarProperty Name="timeText" ColumnName="timeText" />
+          <ScalarProperty Name="time_id" ColumnName="time_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PE_RoomList">
+      <EntityTypeMapping TypeName="ThesisDBModel.PE_RoomList">
+        <MappingFragment StoreEntitySet="PE_RoomList">
+          <ScalarProperty Name="rooms" ColumnName="rooms" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PendingClassSchedules">
+      <EntityTypeMapping TypeName="ThesisDBModel.PendingClassSchedule">
+        <MappingFragment StoreEntitySet="PendingClassSchedule">
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="numHours" ColumnName="numHours" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="room" ColumnName="room" />
+          <ScalarProperty Name="assignedDate" ColumnName="assignedDate" />
+          <ScalarProperty Name="dateFiled" ColumnName="dateFiled" />
+          <ScalarProperty Name="facultyName" ColumnName="facultyName" />
+          <ScalarProperty Name="faculty_id" ColumnName="faculty_id" />
+          <ScalarProperty Name="section" ColumnName="section" />
+          <ScalarProperty Name="subjectCode" ColumnName="subjectCode" />
+          <ScalarProperty Name="absentDate" ColumnName="absentDate" />
+          <ScalarProperty Name="pendingClassID" ColumnName="pendingClassID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomLists">
+      <EntityTypeMapping TypeName="ThesisDBModel.RoomList">
+        <MappingFragment StoreEntitySet="RoomList">
+          <ScalarProperty Name="grp" ColumnName="grp" />
+          <ScalarProperty Name="room" ColumnName="room" />
+          <ScalarProperty Name="roomID" ColumnName="roomID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SemesterSchedules">
+      <EntityTypeMapping TypeName="ThesisDBModel.SemesterSchedule">
+        <MappingFragment StoreEntitySet="SemesterSchedule">
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="hasSaturday" ColumnName="hasSaturday" />
+          <ScalarProperty Name="hasFriday" ColumnName="hasFriday" />
+          <ScalarProperty Name="hasThursday" ColumnName="hasThursday" />
+          <ScalarProperty Name="hasWednesday" ColumnName="hasWednesday" />
+          <ScalarProperty Name="hasTuesday" ColumnName="hasTuesday" />
+          <ScalarProperty Name="hasMonday" ColumnName="hasMonday" />
+          <ScalarProperty Name="durationEnd" ColumnName="durationEnd" />
+          <ScalarProperty Name="durationStart" ColumnName="durationStart" />
+          <ScalarProperty Name="schoolYearEnd" ColumnName="schoolYearEnd" />
+          <ScalarProperty Name="schoolYearStart" ColumnName="schoolYearStart" />
+          <ScalarProperty Name="semester" ColumnName="semester" />
+          <ScalarProperty Name="numofHours" ColumnName="numofHours" />
+          <ScalarProperty Name="instructor" ColumnName="instructor" />
+          <ScalarProperty Name="section" ColumnName="section" />
+          <ScalarProperty Name="subjectCode" ColumnName="subjectCode" />
+          <ScalarProperty Name="days" ColumnName="days" />
+          <ScalarProperty Name="roomNumber" ColumnName="roomNumber" />
+          <ScalarProperty Name="schedID" ColumnName="schedID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ThesisDBModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="date_modified" ColumnName="date_modified" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="modifiedBy" ColumnName="modifiedBy" />
+          <ScalarProperty Name="date_created" ColumnName="date_created" />
+          <ScalarProperty Name="email_address" ColumnName="email_address" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="faculty_id" ColumnName="faculty_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

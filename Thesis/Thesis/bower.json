@@ -1,0 +1,13 @@
+{
+  "name": "Thesis",
+  "authors": [
+    "Jolo Villanueva <el.gamer@yahoo.com.ph>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "bootstrap-material-datetimepicker": "^2.7.1"
+  }
+}

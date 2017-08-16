@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e681546d38314b37a13a7c54b2032a6d" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="ThesisDBModel.AllowedUser" Width="1.5" PointX="10.548198865050543" PointY="9.2951440258394662" />
+        <EntityTypeShape EntityType="ThesisDBModel.Announcement" Width="1.5" PointX="6.5159702648017426" PointY="6.0080612180792077" />
+        <EntityTypeShape EntityType="ThesisDBModel.CancelledClassSchedule" Width="1.5" PointX="3.2792101368676918" PointY="19.901339167683076" />
+        <EntityTypeShape EntityType="ThesisDBModel.CurrentSetting" Width="1.5" PointX="1.5688649348769639" PointY="29.914286493283829" />
+        <EntityTypeShape EntityType="ThesisDBModel.ForgotPasswordTicket" Width="1.5" PointX="6.729112021033238" PointY="6.5741439492321314" />
+        <EntityTypeShape EntityType="ThesisDBModel.Group" Width="1.5" PointX="4.324017547221862" PointY="22.396766836939737" />
+        <EntityTypeShape EntityType="ThesisDBModel.Holiday" Width="1.5" PointX="9.57113178333786" PointY="28.416450886249752" />
+        <EntityTypeShape EntityType="ThesisDBModel.MakeupClassSchedule" Width="1.5" PointX="9.29555599638054" PointY="31.183907851196782" />
+        <EntityTypeShape EntityType="ThesisDBModel.Messaging" Width="1.5" PointX="0.0089774932754121232" PointY="11.582825710802723" />
+        <EntityTypeShape EntityType="ThesisDBModel.OpenTime" Width="1.5" PointX="5.88226235373051" PointY="23.337123449583128" />
+        <EntityTypeShape EntityType="ThesisDBModel.PE_RoomList" Width="1.5" PointX="11.259653068734171" PointY="0.56981091227839276" />
+        <EntityTypeShape EntityType="ThesisDBModel.PendingClassSchedule" Width="1.5" PointX="7.5192829014357567" PointY="7.5890524571710509" />
+        <EntityTypeShape EntityType="ThesisDBModel.RoomList" Width="1.5" PointX="8.8559388652704367" PointY="17.340796925751864" />
+        <EntityTypeShape EntityType="ThesisDBModel.SemesterSchedule" Width="1.5" PointX="1.7855203793316707" PointY="11.604720061460846" />
+        <EntityTypeShape EntityType="ThesisDBModel.User" Width="1.5" PointX="6.4508308518914657" PointY="18.057736807529693" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

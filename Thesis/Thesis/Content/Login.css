@@ -1,0 +1,37 @@
+﻿html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color:#014fb3;
+  color: white;
+}
+.navbar{
+    background-color:#014fb3;  
+}
+
+.parent{
+   display: table;
+   width: 100%;
+
+}
+
+#form_login{
+   display: table-cell;
+   text-align: center;
+   vertical-align: middle;
+}
+
+.container .text{
+    margin-top:20px;
+
+}

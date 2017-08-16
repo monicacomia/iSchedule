@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ThesisDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ThesisDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="AllowedUsers" EntityType="ThesisDBModel.AllowedUser" />
+    <EntitySet Name="Announcements" EntityType="ThesisDBModel.Announcement" />
+    <EntitySet Name="CancelledClassSchedules" EntityType="ThesisDBModel.CancelledClassSchedule" />
+    <EntitySet Name="CurrentSettings" EntityType="ThesisDBModel.CurrentSetting" />
+    <EntitySet Name="ForgotPasswordTickets" EntityType="ThesisDBModel.ForgotPasswordTicket" />
+    <EntitySet Name="Groups" EntityType="ThesisDBModel.Group" />
+    <EntitySet Name="Holidays" EntityType="ThesisDBModel.Holiday" />
+    <EntitySet Name="MakeupClassSchedules" EntityType="ThesisDBModel.MakeupClassSchedule" />
+    <EntitySet Name="Messagings" EntityType="ThesisDBModel.Messaging" />
+    <EntitySet Name="OpenTimes" EntityType="ThesisDBModel.OpenTime" />
+    <EntitySet Name="PE_RoomList" EntityType="ThesisDBModel.PE_RoomList" />
+    <EntitySet Name="PendingClassSchedules" EntityType="ThesisDBModel.PendingClassSchedule" />
+    <EntitySet Name="RoomLists" EntityType="ThesisDBModel.RoomList" />
+    <EntitySet Name="SemesterSchedules" EntityType="ThesisDBModel.SemesterSchedule" />
+    <EntitySet Name="Users" EntityType="ThesisDBModel.User" />
+  </EntityContainer>
+  <EntityType Name="AllowedUser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="faculty_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="first_name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="last_name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="user_type" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Announcement">
+    <Key>
+      <PropertyRef Name="announcementID" />
+    </Key>
+    <Property Type="Int32" Name="announcementID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="announcementMsg" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="expiryDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="dateCreated" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="status" Nullable="false" />
+    <Property Type="Int32" Name="createdBy" Nullable="false" />
+    <Property Type="DateTime" Name="dateModified" Precision="3" />
+    <Property Type="Int32" Name="modifiedBy" />
+  </EntityType>
+  <EntityType Name="CancelledClassSchedule">
+    <Key>
+      <PropertyRef Name="cancelled_id" />
+    </Key>
+    <Property Type="Int32" Name="cancelled_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="schedID" Nullable="false" />
+    <Property Type="DateTime" Name="cancelledDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="subjectCode" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="section" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="facultyName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="room" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dateFiled" Precision="3" />
+    <Property Type="String" Name="time" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="numHours" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="reason" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CurrentSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="semester" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="schoolYearStart" Nullable="false" />
+    <Property Type="Int16" Name="schoolYearEnd" Nullable="false" />
+    <Property Type="DateTime" Name="durationStart" Nullable="false" Precision="0" />
+    <Property Type="DateTime" Name="durationEnd" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="modifiedBy" Nullable="false" />
+    <Property Type="DateTime" Name="dateModified" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ForgotPasswordTicket">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="faculty_id" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="code_hash" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="expiration_date" Precision="3" />
+    <Property Type="Boolean" Name="isUsed" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="grpID" />
+    </Key>
+    <Property Type="Int32" Name="grpID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="grpName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Holiday">
+    <Key>
+      <PropertyRef Name="holidayID" />
+    </Key>
+    <Property Type="Int32" Name="holidayID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="description" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="date" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MakeupClassSchedule">
+    <Key>
+      <PropertyRef Name="makeupClassID" />
+    </Key>
+    <Property Type="Int32" Name="makeupClassID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="absentDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="subjectCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="faculty_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="facultyName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="section" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dateFiled" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="makeupDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="room" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="time" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="numHours" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="reason" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="approvedBy" />
+    <Property Type="DateTime" Name="dateApproved" Precision="3" />
+    <Property Type="String" Name="remarks" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="semester" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="schoolYearStart" />
+    <Property Type="Int32" Name="schoolYearEnd" />
+  </EntityType>
+  <EntityType Name="Messaging">
+    <Key>
+      <PropertyRef Name="msgID" />
+    </Key>
+    <Property Type="Int32" Name="msgID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="author" Nullable="false" />
+    <Property Type="Int32" Name="receiver" Nullable="false" />
+    <Property Type="String" Name="subject" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sender_receiver_datetime" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="sender" />
+    <Property Type="String" Name="sender_message" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="sent_datetime" Precision="3" />
+    <Property Type="DateTime" Name="author_sentdatetime" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="isInbox" />
+    <Property Type="Int32" Name="isInArchive" />
+    <Property Type="Int32" Name="isInTrash" />
+    <Property Type="Int32" Name="isDeleted" />
+    <Property Type="Int32" Name="isRead" />
+  </EntityType>
+  <EntityType Name="OpenTime">
+    <Key>
+      <PropertyRef Name="time_id" />
+    </Key>
+    <Property Type="Int32" Name="time_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="timeText" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="timeValue" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PE_RoomList">
+    <Key>
+      <PropertyRef Name="rooms" />
+    </Key>
+    <Property Type="String" Name="rooms" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PendingClassSchedule">
+    <Key>
+      <PropertyRef Name="pendingClassID" />
+    </Key>
+    <Property Type="Int32" Name="pendingClassID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="absentDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="subjectCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="section" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="faculty_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="facultyName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dateFiled" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="assignedDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="room" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="duration" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="numHours" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="reason" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RoomList">
+    <Key>
+      <PropertyRef Name="roomID" />
+    </Key>
+    <Property Type="Int32" Name="roomID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="room" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="grp" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SemesterSchedule">
+    <Key>
+      <PropertyRef Name="schedID" />
+    </Key>
+    <Property Type="Int32" Name="schedID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="roomNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="days" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="subjectCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="section" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="instructor" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="numofHours" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="semester" Nullable="false" />
+    <Property Type="Int32" Name="schoolYearStart" Nullable="false" />
+    <Property Type="Int32" Name="schoolYearEnd" Nullable="false" />
+    <Property Type="DateTime" Name="durationStart" Nullable="false" Precision="0" />
+    <Property Type="DateTime" Name="durationEnd" Nullable="false" Precision="0" />
+    <Property Type="String" Name="hasMonday" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="hasTuesday" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="hasWednesday" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="hasThursday" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="hasFriday" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="hasSaturday" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="time" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Type="Int32" Name="user_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="faculty_id" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="password" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="first_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="last_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="email_address" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="date_created" Nullable="false" Precision="3" />
+    <Property Type="String" Name="modifiedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="status" />
+    <Property Type="Binary" Name="image" MaxLength="Max" FixedLength="false" />
+    <Property Type="Int32" Name="user_type" />
+    <Property Type="DateTime" Name="date_modified" Precision="3" />
+  </EntityType>
+</Schema>

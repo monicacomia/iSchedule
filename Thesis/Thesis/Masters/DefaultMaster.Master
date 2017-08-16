@@ -1,0 +1,123 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DefaultMaster.master.cs" Inherits="ISchedule.Masters.DefaultMaster" %>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>iSchedule</title>
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">
+
+<%--CSS/Styles--%>            
+	<!-- BOOTSTRAP STYLES-->
+    <link href="<%=ResolveUrl("~/") %>Assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+     <!-- FONTAWESOME STYLES-->
+    <link href="<%=ResolveUrl("~/") %>Assets/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <!-- CUSTOM STYLES-->
+    <link href="<%=ResolveUrl("~/") %>Assets/css/custom.css" rel="stylesheet" type="text/css"/>
+     <!-- GOOGLE FONTS-->
+   <link href="<%=ResolveUrl("~/") %>http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>
+    <%-- DATEPICKER STYLES --%>
+
+    <link rel="stylesheet" href="<%=ResolveUrl("~/") %>Assets/css/bootstrap-datepicker3.css" type="text/css"/>
+    <link rel="stylesheet" href="<%=ResolveUrl("~/") %>Assets/css/bootstrap-datepicker.css" type="text/css"/>
+
+
+    <%--GROWL MESSAGE--%>
+    <link rel="stylesheet" href="<%=ResolveUrl("~/") %>Assets/css/jquery.growl.css" type="text/css"/>
+    <%-- SUMMERNOTE --%>
+    <link rel="stylesheet" href="<%=ResolveUrl("~/") %>Assets/summernote/dist/summernote.css" type="text/css"/>
+
+<%-- JS/Scripts --%>    
+    <!-- JQUERY SCRIPTS -->
+    <script type="text/javascript" src="<%=ResolveUrl("~/") %>Assets/js/jquery-3.2.1.min.js"></script>
+    <%--<script type="text/javascript" src="<%=ResolveUrl("~/") %>Assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/") %>Assets/js/jquery-1.10.2.js"></script>--%>
+
+
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script type="text/javascript" src="<%=ResolveUrl("~/") %>Assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script type="text/javascript" src="<%=ResolveUrl("~/") %>Assets/js/jquery.metisMenu.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script type="text/javascript" src="<%=ResolveUrl("~/") %>Assets/js/custom.js"></script>
+     <%--GROWL MESSAGE--%>
+     <script type="text/javascript" src="<%=ResolveUrl("~/") %>Assets/js/jquery.growl.js"></script>  
+     <%--DATEPICKER --%>
+    <script type="text/javascript" src="<%=ResolveUrl("~/") %>Assets/js/bootstrap-datepicker.js"></script>  
+     <%-- SUMMERNOTE --%>
+    <script type="text/javascript" src="<%=ResolveUrl("~/") %>Assets/summernote/dist/summernote.js"></script> 
+    </asp:PlaceHolder>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body style="overflow-y:auto;">
+<form id="form" runat="server">
+<div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Dashboard.aspx" style="padding-top:5px; padding-right:10px; padding-left:0px;"><img src="<%=ResolveUrl("~/") %>Assets/img/logo.png" width="250" height="50"/></a> 
+            </div>
+  <div style="color: white;
+padding: 15px 50px 5px 50px;
+float: right;
+font-size: 16px;">
+      
+      <asp:Label ID="datelbl" runat="server"></asp:Label>
+      &nbsp;
+
+      <asp:Button runat="server" ID="btnLogout" CssClass="btn btn-primary square-btn-adjust" Text="Logout" OnClick="btnLogout_Click" />
+       
+        </nav>   
+           <!-- /. NAV TOP  -->
+                <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+
+                <ul class="nav" id="main-menu">
+				<li class="text-center">
+                    
+                    <asp:Image ID="profilePic" runat="server" CssClass="user-image img-responsive" />
+                   
+				</li>
+
+
+
+                    <asp:PlaceHolder ID="Menu" runat="server">
+
+
+                    </asp:PlaceHolder>
+
+                   
+                </ul>
+               
+            </div>
+            
+        </nav>  
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+                </asp:ContentPlaceHolder>  
+            
+        </div>
+        <!-- /. PAGE INNER  -->
+
+</div>
+<!-- /. PAGE WRAPPER  -->
+      <%--  </div>--%>
+     <!-- /. WRAPPER  -->
+
+</form>    
+</body>
+</html>
+

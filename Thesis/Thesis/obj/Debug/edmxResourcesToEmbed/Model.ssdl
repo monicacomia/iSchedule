@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ThesisDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ThesisDBModelStoreContainer">
+    <EntitySet Name="AllowedUsers" EntityType="ThesisDBModel.Store.AllowedUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Announcements" EntityType="ThesisDBModel.Store.Announcements" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CancelledClassSchedule" EntityType="ThesisDBModel.Store.CancelledClassSchedule" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CurrentSettings" EntityType="ThesisDBModel.Store.CurrentSettings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ForgotPasswordTickets" EntityType="ThesisDBModel.Store.ForgotPasswordTickets" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Group" EntityType="ThesisDBModel.Store.Group" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Holiday" EntityType="ThesisDBModel.Store.Holiday" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MakeupClassSchedule" EntityType="ThesisDBModel.Store.MakeupClassSchedule" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Messaging" EntityType="ThesisDBModel.Store.Messaging" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OpenTime" EntityType="ThesisDBModel.Store.OpenTime" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PE_RoomList" EntityType="ThesisDBModel.Store.PE_RoomList" store:Type="Tables" store:Schema="dbo" store:Name="PE_RoomList">
+      <DefiningQuery>SELECT 
+      [PE_RoomList].[rooms] AS [rooms]
+      FROM [dbo].[PE_RoomList] AS [PE_RoomList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PendingClassSchedule" EntityType="ThesisDBModel.Store.PendingClassSchedule" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RoomList" EntityType="ThesisDBModel.Store.RoomList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SemesterSchedule" EntityType="ThesisDBModel.Store.SemesterSchedule" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="ThesisDBModel.Store.Users" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="AllowedUsers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="faculty_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="first_name" Type="varchar" MaxLength="50" />
+    <Property Name="last_name" Type="varchar" MaxLength="50" />
+    <Property Name="user_type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Announcements">
+    <Key>
+      <PropertyRef Name="announcementID" />
+    </Key>
+    <Property Name="announcementID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="announcementMsg" Type="text" />
+    <Property Name="expiryDate" Type="datetime" Nullable="false" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="createdBy" Type="int" Nullable="false" />
+    <Property Name="dateModified" Type="datetime" />
+    <Property Name="modifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="CancelledClassSchedule">
+    <Key>
+      <PropertyRef Name="cancelled_id" />
+    </Key>
+    <Property Name="cancelled_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="schedID" Type="int" Nullable="false" />
+    <Property Name="cancelledDate" Type="datetime" Nullable="false" />
+    <Property Name="subjectCode" Type="varchar" MaxLength="50" />
+    <Property Name="section" Type="varchar" MaxLength="50" />
+    <Property Name="facultyName" Type="varchar" MaxLength="100" />
+    <Property Name="room" Type="varchar" MaxLength="50" />
+    <Property Name="dateFiled" Type="datetime" />
+    <Property Name="time" Type="varchar" MaxLength="50" />
+    <Property Name="numHours" Type="varchar" MaxLength="50" />
+    <Property Name="reason" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CurrentSettings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="semester" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="schoolYearStart" Type="smallint" Nullable="false" />
+    <Property Name="schoolYearEnd" Type="smallint" Nullable="false" />
+    <Property Name="durationStart" Type="date" Nullable="false" />
+    <Property Name="durationEnd" Type="date" Nullable="false" />
+    <Property Name="modifiedBy" Type="int" Nullable="false" />
+    <Property Name="dateModified" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ForgotPasswordTickets">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="faculty_id" Type="varchar" MaxLength="50" />
+    <Property Name="code_hash" Type="varchar" MaxLength="100" />
+    <Property Name="expiration_date" Type="datetime" />
+    <Property Name="isUsed" Type="bit" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="grpID" />
+    </Key>
+    <Property Name="grpID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="grpName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Holiday">
+    <Key>
+      <PropertyRef Name="holidayID" />
+    </Key>
+    <Property Name="holidayID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="varchar" MaxLength="50" />
+    <Property Name="date" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MakeupClassSchedule">
+    <Key>
+      <PropertyRef Name="makeupClassID" />
+    </Key>
+    <Property Name="makeupClassID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="absentDate" Type="datetime" Nullable="false" />
+    <Property Name="subjectCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="faculty_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="facultyName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="section" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="dateFiled" Type="datetime" Nullable="false" />
+    <Property Name="makeupDate" Type="datetime" Nullable="false" />
+    <Property Name="room" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="time" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="numHours" Type="varchar" MaxLength="50" />
+    <Property Name="reason" Type="varchar" MaxLength="50" />
+    <Property Name="approvedBy" Type="int" />
+    <Property Name="dateApproved" Type="datetime" />
+    <Property Name="remarks" Type="varchar" MaxLength="50" />
+    <Property Name="semester" Type="varchar" MaxLength="50" />
+    <Property Name="schoolYearStart" Type="int" />
+    <Property Name="schoolYearEnd" Type="int" />
+  </EntityType>
+  <EntityType Name="Messaging">
+    <Key>
+      <PropertyRef Name="msgID" />
+    </Key>
+    <Property Name="msgID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="author" Type="int" Nullable="false" />
+    <Property Name="receiver" Type="int" Nullable="false" />
+    <Property Name="subject" Type="varchar" MaxLength="100" />
+    <Property Name="sender_receiver_datetime" Type="varchar" MaxLength="50" />
+    <Property Name="sender" Type="int" />
+    <Property Name="sender_message" Type="text" />
+    <Property Name="sent_datetime" Type="datetime" />
+    <Property Name="author_sentdatetime" Type="datetime" Nullable="false" />
+    <Property Name="isInbox" Type="int" />
+    <Property Name="isInArchive" Type="int" />
+    <Property Name="isInTrash" Type="int" />
+    <Property Name="isDeleted" Type="int" />
+    <Property Name="isRead" Type="int" />
+  </EntityType>
+  <EntityType Name="OpenTime">
+    <Key>
+      <PropertyRef Name="time_id" />
+    </Key>
+    <Property Name="time_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="timeText" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="timeValue" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'ThesisDB.dbo.PE_RoomList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="PE_RoomList">
+    <Key>
+      <PropertyRef Name="rooms" />
+    </Key>
+    <Property Name="rooms" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PendingClassSchedule">
+    <Key>
+      <PropertyRef Name="pendingClassID" />
+    </Key>
+    <Property Name="pendingClassID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="absentDate" Type="datetime" Nullable="false" />
+    <Property Name="subjectCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="section" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="faculty_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="facultyName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="dateFiled" Type="datetime" Nullable="false" />
+    <Property Name="assignedDate" Type="datetime" Nullable="false" />
+    <Property Name="room" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="duration" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="numHours" Type="varchar" MaxLength="50" />
+    <Property Name="reason" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="RoomList">
+    <Key>
+      <PropertyRef Name="roomID" />
+    </Key>
+    <Property Name="roomID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="room" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="grp" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SemesterSchedule">
+    <Key>
+      <PropertyRef Name="schedID" />
+    </Key>
+    <Property Name="schedID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="roomNumber" Type="varchar" MaxLength="50" />
+    <Property Name="days" Type="varchar" MaxLength="50" />
+    <Property Name="subjectCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="section" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="instructor" Type="varchar" MaxLength="50" />
+    <Property Name="numofHours" Type="varchar" MaxLength="50" />
+    <Property Name="semester" Type="int" Nullable="false" />
+    <Property Name="schoolYearStart" Type="int" Nullable="false" />
+    <Property Name="schoolYearEnd" Type="int" Nullable="false" />
+    <Property Name="durationStart" Type="date" Nullable="false" />
+    <Property Name="durationEnd" Type="date" Nullable="false" />
+    <Property Name="hasMonday" Type="varchar" MaxLength="50" />
+    <Property Name="hasTuesday" Type="varchar" MaxLength="50" />
+    <Property Name="hasWednesday" Type="varchar" MaxLength="50" />
+    <Property Name="hasThursday" Type="varchar" MaxLength="50" />
+    <Property Name="hasFriday" Type="varchar" MaxLength="50" />
+    <Property Name="hasSaturday" Type="varchar" MaxLength="50" />
+    <Property Name="time" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="faculty_id" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="first_name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="last_name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="email_address" Type="varchar" MaxLength="50" />
+    <Property Name="date_created" Type="datetime" Nullable="false" />
+    <Property Name="modifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+    <Property Name="image" Type="image" />
+    <Property Name="user_type" Type="int" />
+    <Property Name="date_modified" Type="datetime" />
+  </EntityType>
+</Schema>
